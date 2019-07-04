@@ -25,7 +25,7 @@ namespace ArduPilotUploader
             Console.WriteLine(@"============================================================");
             if (args.Length == 0)
             {
-                Console.WriteLine(@"Please drag the firmware to hear...");
+                Console.WriteLine(@"Please drag the firmware to here...");
                 string input = Console.ReadLine();
                 if(input != null)
                 {
@@ -39,7 +39,7 @@ namespace ArduPilotUploader
                     {
                         Console.WriteLine("upload failed...");
                     }
-                    Console.WriteLine("please press anykey to exit...");
+                    Console.WriteLine("press any key to exit...");
                     string ss = Console.ReadLine();
                     if(ss != null)
                     {
