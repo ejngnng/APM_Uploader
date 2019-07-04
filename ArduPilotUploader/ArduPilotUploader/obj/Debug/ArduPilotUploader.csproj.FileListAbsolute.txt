@@ -1,0 +1,11 @@
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\ArduPilotUploader.exe.config
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\ArduPilotUploader.exe
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\ArduPilotUploader.pdb
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\BouncyCastle.Crypto.dll
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\fastJSON.dll
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\bin\Debug\Ionic.Zip.dll
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\obj\Debug\ArduPilotUploader.csproj.CoreCompileInputs.cache
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\obj\Debug\ArduPilotUploader.csproj.CopyComplete
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\obj\Debug\ArduPilotUploader.exe
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\obj\Debug\ArduPilotUploader.pdb
+C:\ninja\Project\APM_Uploader\ArduPilotUploader\ArduPilotUploader\obj\Debug\ArduPilotUploader.csprojAssemblyReference.cache
