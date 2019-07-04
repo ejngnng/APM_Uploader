@@ -12,6 +12,8 @@ namespace ArduPilotUploader
     {
         static void Main(string[] args)
         {
+            Console.Title = "ArduPilotUploader";
+            Console.CursorVisible = false;
             Console.WriteLine(@"|**********************************************************|");
             Console.WriteLine(@"|****************    ArduPilot Uploader    ****************|");
             Console.WriteLine(@"|****************    Author:   ninja       ****************|");
@@ -33,18 +35,18 @@ namespace ArduPilotUploader
                     rs = Uploader(input);
                     if (rs)
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("upload success...");
+                        Console.ResetColor();
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("upload failed...");
+                        Console.ResetColor();
                     }
                     Console.WriteLine("press any key to exit...");
-                    string ss = Console.ReadLine();
-                    if(ss != null)
-                    {
-                        return;
-                    }
+                    Console.ReadLine();
                 }
             }
             else
@@ -122,7 +124,12 @@ namespace ArduPilotUploader
                     {
                         up.currentChecksum(fw);
                     }
-                    catch (Exception ex) { Console.WriteLine("No need to upload. already on the board" + ex.ToString()); up.close(); return true; }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("No need to upload. already on the board");
+                        up.close();
+                        return true;
+                    }
 
                     try
                     {
@@ -198,5 +205,7 @@ namespace ArduPilotUploader
 
             return input;
         }
+
+
     }
 }

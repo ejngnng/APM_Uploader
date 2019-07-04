@@ -571,16 +571,21 @@ namespace ArduPilotUploader
             List<byte[]> groups = self.__split_len(code, PROG_MULTI_MAX);
             Console.WriteLine("Programing packet total: " + groups.Count);
             int a = 1;
+            string ss = string.Empty;
             foreach (Byte[] bytes in groups)
             {
                 self.__program_multi(bytes);
 
-                Console.WriteLine("Program {0}/{1}", a, groups.Count);
-
+                //    Console.WriteLine("Program {0}/{1}", a, groups.Count);
+                backspace(ss.Length);
+                double p = (a / (float)groups.Count) * 100.0;
+                ss = string.Format("[Program {0:4} %]", p.ToString("f2"));
+                Console.Write(ss);
                 a++;
                 if (ProgressEvent != null)
                     ProgressEvent((a / (float)groups.Count) * 100.0);
             }
+            Console.WriteLine();
         }
 
         public void __verify_v2(APMFirmware fw)
@@ -693,13 +698,13 @@ namespace ArduPilotUploader
             if (self.fw_maxsize < fw.image_size)
                 throw new Exception("Firmware image is too large for this board");
 
-            print("erase...");
+            print("start erase...");
             self.__erase();
 
-            print("program...");
+            print("start program...");
             self.__program(fw);
 
-            print("verify...");
+            print("start verify...");
             if (self.bl_rev == 2)
                 self.__verify_v2(fw);
             else
@@ -746,6 +751,25 @@ namespace ArduPilotUploader
             catch { }
 
             this.port = null;
+        }
+
+        void ProgramEvent(double p)
+        {
+            int count = Convert.ToInt32(p);
+            string b = "";
+            for (int i = 0; i < count; i++)
+            {
+                b += "#";
+            }
+
+        }
+
+        void backspace(int n)
+        {
+            for (var i = 0; i < n; i++)
+            {
+                Console.Write((char)0x08);
+            }
         }
     }
 }
