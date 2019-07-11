@@ -17,8 +17,8 @@ namespace ArduPilotUploader
             Console.WriteLine(@"|**********************************************************|");
             Console.WriteLine(@"|****************    ArduPilot Uploader    ****************|");
             Console.WriteLine(@"|****************    Author:   ninja       ****************|");
-            Console.WriteLine(@"|****************    Version:  V1.0.0      ****************|");
-            Console.WriteLine(@"|****************    Build:    2019-07-04  ****************|");
+            Console.WriteLine(@"|****************    Version:  V1.0.1      ****************|");
+          //  Console.WriteLine(@"|****************    Build:    2019-07-04  ****************|");
             Console.WriteLine(@"|**********************************************************|");
             Console.WriteLine(@"Usage: ");
             Console.WriteLine(@"      1. Click ArduPilotUploader.exe");
@@ -29,7 +29,7 @@ namespace ArduPilotUploader
             {
                 Console.WriteLine(@"Please drag the firmware to here...");
                 string input = Console.ReadLine();
-                if(input != null)
+                if(input != null && input.Contains("px4"))
                 {
                     bool rs = false;
                     rs = Uploader(input);
@@ -45,6 +45,12 @@ namespace ArduPilotUploader
                         Console.WriteLine("upload failed...");
                         Console.ResetColor();
                     }
+                    Console.WriteLine("press any key to exit...");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Please drag px4 firmware...");
                     Console.WriteLine("press any key to exit...");
                     Console.ReadLine();
                 }
